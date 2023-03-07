@@ -46,7 +46,7 @@ if(st.button("Predict Price")):
     transmission_type=encode_values["transmission_type"][transmission_type]
 
     price=model_pred(fuel_type, transmission_type,engine, seats)
-    st.text("precited selling price in lakhs is: "+str(price))
+    st.text("predcited selling price in lakhs is: "+str(price))
 
 
 
