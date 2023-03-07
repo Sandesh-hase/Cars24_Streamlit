@@ -51,39 +51,39 @@ if(st.button("Predict Price")):
 
 
 
-# ########   section 2     ########
+########   section 2     ########
 
-# st.title("Understanding the data")
+st.title("Understanding the data")
 
-# st.subheader("\n Here we will try to understand how the different features affect the selling price.\n ")
-# st.dataframe(df_orig.head(25))
+st.subheader("\n Here we will try to understand how the different features affect the selling price.\n ")
+st.dataframe(df_orig.head(25))
 
 
-# ########  section 3  ########
+########  section 3  ########
 
-# col1, col2 = st.columns(2)
+col1, col2 = st.columns(2)
 
-# ########  column 1   ########
+########  column 1   ########
 
-# col1.subheader("Pairplot against selling price")
-# var1 = col1.selectbox(" Select Column for pairplot: ",
-#                      ['year','mileage','seller_type','km_driven','fuel_type','transmission_type','engine','max_power','seats'])
+col1.subheader("Pairplot against selling price")
+var1 = col1.selectbox(" Select Column for pairplot: ",
+                     ['year','mileage','seller_type','km_driven','fuel_type','transmission_type','engine','max_power','seats'])
  
-# col1.text("selling price vs "+var1)
+col1.text("selling price vs "+var1)
 
-# plot=sns.pairplot(y_vars=['selling_price'],x_vars=[var1], data=df_orig, height=8)
-# col1.pyplot(plot)
+plot=sns.pairplot(y_vars=['selling_price'],x_vars=[var1], data=df_orig, height=8)
+col1.pyplot(plot)
 
 
-# ########  column 2   ########
+########  column 2   ########
 
-# col2.subheader("Histogram")
-# var2 = col2.selectbox(" Select Column for histogram: ",
-#                      ['mileage','year','seller_type','km_driven','fuel_type','transmission_type','engine','max_power','seats'])
+col2.subheader("Histogram")
+var2 = col2.selectbox(" Select Column for histogram: ",
+                     ['mileage','year','seller_type','km_driven','fuel_type','transmission_type','engine','max_power','seats'])
 
-# bins=col2.slider('bins', 10, 100, 20)
-# col2.text("Histogram :"+var2)
+bins=col2.slider('bins', 10, 100, 20)
+col2.text("Histogram :"+var2)
 
-# fig = plt.figure()
-# sns.histplot(x = var2, data = df_orig, bins=bins)
-# col2.pyplot(fig)
+fig = plt.figure()
+sns.histplot(x = var2, data = df_orig, bins=bins)
+col2.pyplot(fig)
